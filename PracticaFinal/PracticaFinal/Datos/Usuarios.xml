@@ -1,0 +1,14 @@
+﻿<Usuarios>
+	<Usuario id="0">
+		<nombreusuario>US1</nombreusuario>
+		<contraseña>C1</contraseña>
+		<nombre>Álvaro</nombre>
+		<apellidos>García</apellidos>
+		<ultimoAcceso>14/12/2022</ultimoAcceso>
+		<fechaNacimiento>10/06/2002</fechaNacimiento>
+		<edad>20</edad>
+		<correo>alvaro.garcia@alu.uclm.es,alvaaa.gc@gmail.com</correo>
+		<telefono>657352086,920789390</telefono>
+		<fotoperfil>Imagenes/avatar1.png</fotoperfil>
+	</Usuario>
+</Usuarios>

@@ -1,0 +1,619 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PracticaFinal"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="PracticaFinal.Ventana_Excursionistas"
+        mc:Ignorable="d"
+        Title="Ventana_Excursionistas" 
+        Height="650" Width="950" 
+        WindowStartupLocation="CenterScreen"
+        MinHeight="650" MinWidth="950">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="MaxLength" Value="30"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="pnlPrincipal" Width="800" Margin="50,0,50,9" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="250*" />
+            <RowDefinition Height="54*"/>
+        </Grid.RowDefinitions>
+        <GroupBox x:Name="GBPrincipal" BorderBrush="Black"
+                  Background="AliceBlue" Margin="0,26,0,0" Grid.RowSpan="2" >
+
+            <GroupBox.Header >
+                <Border  TextBlock.FontSize="22" Background="Blue" >
+                    <TextBlock Text="Excursionistas" Foreground ="White"/>
+                </Border>
+            </GroupBox.Header>
+
+            <Grid x:Name="pnlExcursionista" Margin="6,0,5,0" Height="447">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="37"/>
+                    <RowDefinition Height="288"/>
+                    <RowDefinition Height="72.875"/>
+                </Grid.RowDefinitions>
+                <Grid x:Name="Grid_menu" Background="#FFFDFDFD">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="48"/>
+                        <ColumnDefinition Width="72"/>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="331"/>
+                        <ColumnDefinition Width="35"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="35"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="35"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btn_Inicio" Content="" Height="NaN" Width="NaN" Click="btn_Inicio_Click" ToolTip="Ir a la ventana de inicio">
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                        </Button.BorderBrush>
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Iconos/bicicleta.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btn_rutas" Grid.Column="2" Content="Rutas" Height="NaN" Width="NaN" Click="btn_rutas_Click_1" Margin="0,24,0,0" FontWeight="Bold" FontSize="14" HorizontalContentAlignment="Right" Background="{x:Null}" ToolTip="Ir a la ventana de rutas">
+                        <Button.Foreground>
+                            <SolidColorBrush Color="Black" Opacity="1"/>
+                        </Button.Foreground>
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                        </Button.BorderBrush>
+                    </Button>
+                    <Button x:Name="btn_guias" Grid.Column="4" Content="Guías" Height="NaN" Width="NaN" Click="btn_guias_Click" Margin="0,24,0,0" FontWeight="Bold" FontSize="14" Background="{x:Null}" ToolTip="Ir a la ventana de guías">
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                        </Button.BorderBrush>
+                    </Button>
+                    <Button x:Name="btn_excursionistas" Grid.Column="6" Content="Excursionistas" Height="NaN" Width="NaN" Click="btn_excursionistas_Click" Margin="0,24,0,0" FontWeight="Bold" FontSize="14" Background="{x:Null}" ToolTip="Ir a la ventana de excursionistas">
+                        <Button.Foreground>
+                            <SolidColorBrush Color="Black" Opacity="1"/>
+                        </Button.Foreground>
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                        </Button.BorderBrush>
+                    </Button>
+                    <Button x:Name="btn_configuracion" Grid.Column="10" Content="" Height="NaN" Width="NaN" Margin="0,5,0,5" Click="btn_configuracion_Click" ToolTip="Ir a la ventana de configuración">
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                        </Button.BorderBrush>
+                        <Button.Foreground>
+                            <SolidColorBrush Color="Black" Opacity="0"/>
+                        </Button.Foreground>
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Iconos/Ajustes.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btn_cerrarsesion" Grid.Column="12" Content="" Height="NaN" Width="NaN" Click="btn_cerrarsesion_Click" Margin="0,5,0,5" ToolTip="Cerrar sesión">
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                        </Button.BorderBrush>
+                        <Button.Foreground>
+                            <SolidColorBrush Color="Black" Opacity="0"/>
+                        </Button.Foreground>
+                        <Button.Background>
+                            <ImageBrush TileMode="Tile" Stretch="Uniform" ImageSource="/Iconos/CerrarSesion.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btn_Ayuda" Grid.Column="8" Content="" Margin="0,5,0,5" Click="btn_Ayuda_Click" ToolTip="Accede a la ayuda">
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                        </Button.BorderBrush>
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Iconos/ayuda.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+
+                </Grid>
+                <Border x:Name="border_datos" BorderBrush="Black" BorderThickness="1" Grid.Row="2" Margin="0,0,0,33" Grid.RowSpan="2">
+                    <Grid x:Name="Grid_excursionistas" Margin="0,0,0,-32">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30*"/>
+                            <RowDefinition Height="257*"/>
+                            <RowDefinition Height="71*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="175*"/>
+                            <ColumnDefinition Width="37*"/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="554*"/>
+                        </Grid.ColumnDefinitions>
+                        <GridSplitter x:Name="GSExcursionistas" Grid.Column="2" HorizontalAlignment="Stretch" Grid.RowSpan="3" Margin="0,0,0,32" IsEnabled="False"/>
+                        <TextBox x:Name="txtBusqueda" TextWrapping="Wrap" Text="" Margin="0,0,0,257" VerticalContentAlignment="Center" Grid.RowSpan="2" MaxLines="1"/>
+                        <Button x:Name="btnBusqueda" Height="NaN" Width="NaN" Grid.Column="1" Margin="0,0,0,257" Grid.RowSpan="2" ToolTip="Filtrar excursionistas">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Iconos/lupa.png" Stretch="Uniform"/>
+                            </Button.Background>
+                        </Button>
+                        <TabControl x:Name="tbDatos" Grid.Column="3" Grid.RowSpan="3"  Margin="0,0,0,60" Visibility="Hidden" SelectedIndex="0">
+                            <TabItem x:Name="TabDatosPersonales" Header="Datos Personales">
+                                <Grid x:Name="Grid_datosPersonales" Background="White" RenderTransformOrigin="0.401,0.444">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="148*"/>
+                                        <RowDefinition Height="125*"/>
+                                    </Grid.RowDefinitions>
+                                    <GroupBox x:Name="GB_InformaciónPersonal" BorderBrush="Blue" Margin="1,4,260,15">
+                                        <GroupBox.Header>
+                                            <Border Background="Blue" >
+                                                <TextBlock x:Name="TB_InformaciónPersonal" Text="Información personal" Foreground="White"/>
+                                            </Border>
+                                        </GroupBox.Header>
+                                        <Border BorderThickness="1" Margin="0,0,9,0" Height="110">
+                                            <Border.BorderBrush>
+                                                <SolidColorBrush Color="Black" Opacity="0"/>
+                                            </Border.BorderBrush>
+                                            <Grid x:Name="Grid_InformaciónPersonal">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="31"/>
+                                                    <ColumnDefinition Width="77"/>
+                                                    <ColumnDefinition Width="137"/>
+                                                    <ColumnDefinition Width="115"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="8"/>
+                                                    <RowDefinition Height="30"/>
+                                                    <RowDefinition Height="30"/>
+                                                    <RowDefinition Height="30"/>
+                                                    <RowDefinition Height="12"/>
+                                                </Grid.RowDefinitions>
+                                                <Label x:Name="lbl_nombre" Content="Nombre:*" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                                                <Label x:Name="lbl_apellidos" Content="Apellidos:*" Grid.Row="2" Grid.Column="1" Height="NaN" Width="NaN" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                                                <Label x:Name="lbl_edad" Content="Edad:*" Grid.Row="3" Grid.Column="1" Height="NaN" Width="NaN" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                                                <TextBox x:Name="txt_nombre" TextWrapping="Wrap" Grid.Column="2" Grid.Row="1" Height="NaN"  VerticalContentAlignment="Center"/>
+                                                <TextBox x:Name="txt_apellidos" TextWrapping="Wrap" Grid.Column="2" RenderTransformOrigin="0.521,1.279" Grid.Row="2" VerticalContentAlignment="Center"/>
+                                                <TextBox x:Name="txt_edad" TextWrapping="Wrap" Grid.Column="2" RenderTransformOrigin="0.521,1.279" Grid.Row="3"  VerticalContentAlignment="Center"/>
+                                            </Grid>
+                                        </Border>
+                                    </GroupBox>
+                                    <Grid x:Name="Grid_ImgExcursionista" Margin="424,16,10,16">
+
+                                        <Border BorderBrush="Blue" Background="Transparent"
+                                            BorderThickness="2" Margin="5,2,2,2" >
+                                            <Image x:Name="imgExcursionista"
+                                                Width="100"                                       
+                                                Stretch="Uniform" Margin="2,0,1,-1"/>
+                                        </Border>
+
+                                        <Button x:Name="btnCargarImagen"
+                                            Content="+" ToolTip="Cambiar imagen"
+                                            VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                                            Margin = "5" FontSize="30" FontWeight ="Bold"
+                                            Background="Transparent" BorderBrush="Transparent"
+                                            Foreground="Blue" Click="btnCargarImagen_Click"/>
+                                    </Grid>
+                                    <GroupBox x:Name="GB_InformaciónContacto" BorderBrush="Blue" Margin="0,138,141,10" Grid.RowSpan="2">
+                                        <GroupBox.Header>
+                                            <Border Background="Blue" >
+                                                <TextBlock x:Name="TB_InformaciónContacto" Text="Información de contacto" Foreground="White"/>
+                                            </Border>
+                                        </GroupBox.Header>
+
+                                        <Grid x:Name="Grid_InformaciónContacto" Margin="0,0,-1,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="36"/>
+                                                <ColumnDefinition Width="126"/>
+                                                <ColumnDefinition Width="164"/>
+                                                <ColumnDefinition Width="32"/>
+                                                <ColumnDefinition Width="87"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="10"/>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Label x:Name="lbl_Correos" Grid.Column="1" Content="Correo/s Electronicos:" Height="NaN" Width="NaN" HorizontalContentAlignment="Right" Grid.Row="1"/>
+                                            <Label x:Name="lbl_Telefonos" Grid.Column="1" Content="Teléfono/s:" Grid.Row="2" Height="NaN" Width="NaN" HorizontalContentAlignment="Right"/>
+                                            <ComboBox x:Name="cb_correos" Grid.Column="2" Height="NaN" Grid.Row="1" VerticalContentAlignment="Center" SelectedIndex="0" PreviewMouseRightButtonDown="ClickDerecho_cb_correos"/>
+                                            <ComboBox x:Name="cb_telefonos" Grid.Column="2" Grid.Row="2" Height="NaN" VerticalContentAlignment="Center" SelectedIndex="0"/>
+                                            <Button x:Name="bt_añadirCorreo" Grid.Column="3" Content="" Grid.Row="1" Width="NaN" Click="bt_añadirCorreo_Click" ToolTip="Añade un nuevo correo">
+                                                <Button.BorderBrush>
+                                                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                                                </Button.BorderBrush>
+                                                <Button.Background>
+                                                    <ImageBrush ImageSource="/Iconos/añadir.png" Stretch="Uniform"/>
+                                                </Button.Background>
+                                            </Button>
+                                            <Button x:Name="bt_añadirTelefono" Grid.Column="3" Content="" Grid.Row="2" Height="NaN" Width="NaN" Click="bt_añadirTelefono_Click" ToolTip="Añade un nuevo telefono">
+                                                <Button.Background>
+                                                    <ImageBrush ImageSource="/Iconos/añadir.png" Stretch="Uniform"/>
+                                                </Button.Background>
+                                                <Button.BorderBrush>
+                                                    <ImageBrush/>
+                                                </Button.BorderBrush>
+                                            </Button>
+                                            <Button x:Name="bt_eliminarCorreo" Grid.Column="4" Content="" Width="NaN" Margin="0,0,55,0" Grid.Row="1" Click="bt_eliminarCorreo_Click" ToolTip="Elimina el correo seleccionado">
+                                                <Button.BorderBrush>
+                                                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                                                </Button.BorderBrush>
+                                                <Button.Background>
+                                                    <ImageBrush ImageSource="/Iconos/eliminar.png" Stretch="Uniform"/>
+                                                </Button.Background>
+                                            </Button>
+                                            <Button x:Name="bt_eliminartlf" Grid.Column="4" Content="" Width="NaN" Margin="0,0,55,0" Grid.Row="2" Click="bt_eliminartlf_Click" ToolTip="Elimina el telefono seleccionado">
+                                                <Button.BorderBrush>
+                                                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                                                </Button.BorderBrush>
+                                                <Button.Background>
+                                                    <ImageBrush ImageSource="/Iconos/eliminar.png" Stretch="Uniform"/>
+                                                </Button.Background>
+                                            </Button>
+                                        </Grid>
+                                    </GroupBox>
+                                    <Label x:Name="lbl_ErrorNombre" Content="Introduce el nombre" HorizontalAlignment="Left" Margin="293,32,0,0" VerticalAlignment="Top" Width="120" Foreground="Red" Visibility="Hidden"/>
+                                    <Label x:Name="lbl_ErrorApellido" Content="Introduce los apellidos" HorizontalAlignment="Left" Margin="293,58,0,0" VerticalAlignment="Top" Width="120" Foreground="Red"  Visibility="Hidden"/>
+                                    <Label x:Name="lbl_ErrorEdad" Content="Introduce la edad" HorizontalAlignment="Left" Margin="293,89,0,0" VerticalAlignment="Top" Width="120" Foreground="Red"  Visibility="Hidden"/>
+                                </Grid>
+                            </TabItem>
+                            <TabItem x:Name="TabRutas" Header="Rutas">
+                                <TabItem.Background>
+                                    <LinearGradientBrush EndPoint="0,1">
+                                        <GradientStop Color="#FFF0F0F0"/>
+                                        <GradientStop Color="White" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </TabItem.Background>
+                                <Grid Height="289" Margin="0,0,-3,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="27"/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <DataGrid x:Name="dg_rutasExcursionistas" AutoGenerateColumns="False" BorderBrush="#FFABADB3" Grid.Row="1" Margin="0,0,0,26" CanUserAddRows="False" CanUserDeleteRows="False" Visibility="Visible" >
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Ruta" Binding="{Binding Nombre}" IsReadOnly="True" />
+                                            <DataGridTemplateColumn Header="Fecha">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <DatePicker x:Name="MyDatePicker" SelectedDate="{Binding fecha}" BorderBrush="Transparent" Focusable="False" >
+                                                            <DatePicker.Resources>
+                                                                <Style TargetType="DatePickerTextBox">
+                                                                    <Setter Property="IsReadOnly" Value="True"></Setter>
+                                                                </Style>
+                                                            </DatePicker.Resources>
+                                                        </DatePicker>
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                            <DataGridTextColumn Header="Hora" Binding="{Binding hora}" IsReadOnly="True"/>
+                                            <DataGridTextColumn Header="Guia" Binding="{Binding Guia}" IsReadOnly="True"/>
+                                            <DataGridCheckBoxColumn Header="Realizada" Binding="{Binding Realizada}" />
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                    <Button x:Name="btnBusqueda_Ruta" Width="NaN"
+                                            BorderBrush="#FFABADB3" Margin="509,0,0,261" Grid.RowSpan="2" ToolTip="Filtrar las rutas del excursionista">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="/Iconos/lupa.png" Stretch="Uniform"/>
+                                        </Button.Background>
+                                    </Button>
+                                    <TextBox x:Name="txtBusqueda_Ruta" TextWrapping="Wrap"  VerticalContentAlignment="Center" Margin="331,0,41,261" Grid.RowSpan="2">
+                                    </TextBox>
+                                    <Button x:Name="btn_EditarRuta" Content="Editar rutas" HorizontalAlignment="Left" RenderTransformOrigin="-0.328,-0.342" Width="148" Click="btn_EditarRuta_Click" ToolTip="Editar la lista de rutas del excursionista"/>
+                                </Grid>
+                            </TabItem>
+                        </TabControl>
+                        <ListBox x:Name="lstExcursionistas" SelectedIndex="-1" Background="White" Grid.Row="1" Margin="-1,0,1,32" Grid.ColumnSpan="2" Grid.RowSpan="2"  SelectionChanged="lstExcursionistas_SelectionChanged2" PreviewMouseDown="lstExcursionistas_SelectionNull" >
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Width="32" Height="37"
+                                            Source="{Binding Caratula}"/>
+                                        <TextBlock VerticalAlignment="Center"
+                                            Margin="10,0,0,0"
+                                            Text="{Binding Nombre}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <Grid x:Name="grid_NoSeleccionado" Grid.Column="3" Grid.Row="1" Margin="0,0,0,32" Grid.RowSpan="2" Visibility="Visible">
+                            <Rectangle x:Name="rt_noseleccionado" Stroke="Black" Fill="White"/>
+                            <Label Content="Selecciona un excursionista para acceder a sus datos" Margin="0,74,1,172" FontSize="20" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                                <Label.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform AngleX="1.888"/>
+                                        <RotateTransform/>
+                                        <TranslateTransform X="1.467"/>
+                                    </TransformGroup>
+                                </Label.RenderTransform>
+                            </Label>
+                            <Image HorizontalAlignment="Center" Height="140" Margin="0,133,0,0" VerticalAlignment="Top" Width="150" Source="/Imagenes/bicicleta.jpg"/>
+                        </Grid>
+                        <Button x:Name="btn_añadirexcursionista" Content="Añadir excursionista" Margin="0,0,1,32" Grid.Row="2" Grid.ColumnSpan="2" Click="btn_añadirexcursionista_Click" ToolTip="Añadir un nuevo excursionista"/>
+                    </Grid>
+                </Border>
+                <Border x:Name="bd_opcionesdatos" BorderBrush="Black" BorderThickness="1" Grid.Row="3" Margin="222,0,0,33" Background="White" Visibility="Hidden">
+                    <Grid x:Name="Grid_OpcionesDatos">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="330*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="bt_guardar" Content="Guardar" Height="NaN" Width="NaN" Background="White" Grid.Column="2" Click="bt_guardar_Click" ToolTip="Guardar los cambios"/>
+                        <Button x:Name="bt_cancelar" Grid.Column="1" Content="Cancelar" Height="NaN" Width="NaN" Background="White" Click="bt_cancelar_Click" ToolTip="Cancelar los cambios"/>
+                        <Button x:Name="bt_eliminar" Content="Eliminar" Height="NaN" Width="NaN" Background="White" Click="bt_eliminar_Click" ToolTip="Elimina el excursionista seleccionado"/>
+                    </Grid>
+                </Border>
+                <Border x:Name="border_AñadirCorreo" BorderBrush="Black" BorderThickness="1" Grid.Row="2" Margin="196,69,195,30" Visibility="Hidden">
+                    <Grid>
+                        <Rectangle Stroke="Black" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Fill="White"/>
+                        <Label x:Name="lbl_anadircorreo" Content="Correo:" Margin="27,55,287,102" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="30"/>
+                        <TextBox x:Name="txt_anadircorreo" HorizontalAlignment="Left" Margin="97,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="30" VerticalContentAlignment="Center"/>
+                        <Button x:Name="btn_cancelarcorreo" Content="Cancelar" Margin="78,121,236,24" Click="btn_cancelarcorreo_Click"/>
+                        <Button x:Name="btn_anadircorreo" Content="Añadir" Margin="252,121,62,24" Click="btn_anadircorreo_Click"/>
+                    </Grid>
+                </Border>
+                <Border x:Name="border_AñadirTlf" BorderBrush="Black" BorderThickness="1" Grid.Row="2" Margin="196,69,195,30" Visibility="Hidden">
+                    <Grid>
+                        <Rectangle Stroke="Black" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Fill="White"/>
+                        <Label x:Name="lbl_anadirtlf" Content="Telefono:" Margin="27,55,287,102" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="30"/>
+                        <TextBox x:Name="txt_anadirtlf" HorizontalAlignment="Left" Margin="97,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="30" VerticalContentAlignment="Center"/>
+                        <Button x:Name="btn_cancelartlf" Content="Cancelar" Margin="78,121,236,24" Click="btn_cancelartlf_Click" />
+                        <Button x:Name="btn_anadirtlf" Content="Añadir" Margin="252,121,62,24" Click="btn_anadirtlf_Click" />
+                    </Grid>
+                </Border>
+                <Border x:Name="border_anadirruta" BorderBrush="Black" BorderThickness="1" Grid.Row="2" Margin="44,10,43,37" Grid.RowSpan="2" Visibility="Hidden">
+                    <Grid>
+                        <Rectangle HorizontalAlignment="Center" Height="312" Stroke="Black" VerticalAlignment="Center" Width="688" Fill="White"/>
+                        <Label x:Name="lbl_Titulo" Content="Listado de rutas disponibles" HorizontalAlignment="Center" VerticalAlignment="Top" Width="688" HorizontalContentAlignment="Center" FontSize="20"/>
+                        <DataGrid x:Name="dg_anadirruta" Margin="138,65,18,65" AutoGenerateColumns="False" CanUserAddRows="False" MinRowHeight="25" RowHeight="25" CanUserDeleteRows="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Ruta" Binding="{Binding Nombre}" IsReadOnly="True" />
+                                <DataGridTemplateColumn Header="Fecha">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <DatePicker x:Name="MyDatePicker" SelectedDate="{Binding fecha}" BorderBrush="Transparent" Focusable="False" >
+                                                <DatePicker.Resources>
+                                                    <Style TargetType="DatePickerTextBox">
+                                                        <Setter Property="IsReadOnly" Value="True"></Setter>
+                                                    </Style>
+                                                </DatePicker.Resources>
+                                            </DatePicker>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Header="Hora" Binding="{Binding hora}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Guia" Binding="{Binding Guia}" IsReadOnly="True"/>
+                                <DataGridCheckBoxColumn Header="Realizada" Binding="{Binding Realizada}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button x:Name="btn_cancelarRuta" Content="Cancelar" HorizontalAlignment="Left" Margin="189,252,0,0" VerticalAlignment="Top" Height="50" Width="118" Click="btn_cancelarRuta_Click"/>
+                        <Button x:Name="btn_anadirRuta" Content="Guardar" Margin="436,252,134,10" Click="btn_anadirRuta_Click"/>
+                        <GridSplitter HorizontalAlignment="Left" Height="182" Margin="129,0,0,0" VerticalAlignment="Center" Width="9"/>
+                        <DataGrid x:Name="dg_seleccionar"  Margin="7,65,559,65" AutoGenerateColumns="False" CanUserAddRows="False" CanUserResizeColumns="False" MinRowHeight="25" CanUserResizeRows="False" HorizontalScrollBarVisibility="Disabled" RowHeight="25" CanUserDeleteRows="False" >
+                            <DataGrid.Columns>
+                                <DataGridCheckBoxColumn x:Name="col_seleccionar" Header="Seleccionar" Binding="{Binding Seleccionada}" CanUserResize="False" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Border>
+                <Border x:Name="border_anadirExcursionista_1" BorderBrush="Black" BorderThickness="1" Grid.Row="1" Margin="44,18,43,10" Grid.RowSpan="3" Visibility="Hidden">
+                    <Grid>
+                        <Rectangle Stroke="Black" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Fill="White"/>
+                        <GroupBox x:Name="GB_Anadir_InformaciónPersonal" BorderBrush="Blue" Margin="62,50,317,191">
+                            <GroupBox.Header>
+                                <Border Background="Blue" >
+                                    <TextBlock x:Name="TB_InformaciónPersonal1" Text="Información personal" Foreground="White"/>
+                                </Border>
+                            </GroupBox.Header>
+                            <Border BorderThickness="1" Margin="0,0,-2,0" Height="110">
+                                <Border.BorderBrush>
+                                    <SolidColorBrush Color="Black" Opacity="0"/>
+                                </Border.BorderBrush>
+                                <Grid x:Name="Grid_InformaciónPersonal1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="82"/>
+                                        <ColumnDefinition Width="135"/>
+                                        <ColumnDefinition Width="103"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="8"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="12"/>
+                                    </Grid.RowDefinitions>
+                                    <Label x:Name="lbl_Anadir_nombre" Content="Nombre: *" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                                    <Label x:Name="lbl_Anadir_apellidos" Content="Apellidos: *" Grid.Row="2" Grid.Column="1" Height="NaN" Width="NaN" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                                    <Label x:Name="lbl_Anadir_edad" Content="Edad: *" Grid.Row="3" Grid.Column="1" Height="NaN" Width="NaN" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                                    <TextBox x:Name="txt_Anadir_nombre" TextWrapping="Wrap" Grid.Column="2" Grid.Row="1" Height="NaN"  VerticalContentAlignment="Center" BorderBrush="#FFB3ACAB"/>
+                                    <TextBox x:Name="txt_Anadir_apellidos" TextWrapping="Wrap" Grid.Column="2" RenderTransformOrigin="0.521,1.279" Grid.Row="2" VerticalContentAlignment="Center"/>
+                                    <TextBox x:Name="txt_Anadir_edad" TextWrapping="Wrap" Grid.Column="2" RenderTransformOrigin="0.521,1.279" Grid.Row="3"  VerticalContentAlignment="Center"/>
+                                </Grid>
+                            </Border>
+                        </GroupBox>
+                        <Grid x:Name="Grid_Anadir_ImgExcursionista" Margin="529,57,45,198">
+
+                            <Border BorderBrush="Blue" Background="Transparent"
+                                BorderThickness="2" Margin="5,2,2,2" >
+                                <Image x:Name="img_Anadir_Excursionista"
+                                    Width="100"                                       
+                                    Stretch="Uniform" Margin="2,0,1,-1"/>
+                            </Border>
+
+                            <Button x:Name="btn_Anadir_CargarImagen"
+                                Content="+" ToolTip="Cambiar imagen"
+                                Margin = "84,64,5,5" FontSize="30" FontWeight ="Bold"
+                                Background="Transparent" BorderBrush="Transparent"
+                                Foreground="Blue" Click="btn_Anadir_CargarImagen_Click"/>
+                        </Grid>
+                        <GroupBox x:Name="GB_Anadir_InformaciónContacto" BorderBrush="Blue" Margin="62,196,219,50">
+                            <GroupBox.Header>
+                                <Border Background="Blue" >
+                                    <TextBlock x:Name="TB_InformaciónContacto1" Text="Información de contacto" Foreground="White"/>
+                                </Border>
+                            </GroupBox.Header>
+
+                            <Grid x:Name="Grid_Anadir_InformaciónContacto" Margin="0,0,-1,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="36"/>
+                                    <ColumnDefinition Width="126"/>
+                                    <ColumnDefinition Width="164"/>
+                                    <ColumnDefinition Width="32"/>
+                                    <ColumnDefinition Width="87"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Label x:Name="lbl_Anadir_Correos" Grid.Column="1" Content="Correo/s Electronicos:" Height="NaN" Width="NaN" HorizontalContentAlignment="Right" Grid.Row="1"/>
+                                <Label x:Name="lbl_Anadir_Telefonos" Grid.Column="1" Content="Teléfono/s:" Grid.Row="2" Height="NaN" Width="NaN" HorizontalContentAlignment="Right"/>
+                                <ComboBox x:Name="cb_Anadir_correos" Grid.Column="2" Height="NaN" Grid.Row="1" VerticalContentAlignment="Center" SelectedIndex="0"/>
+                                <ComboBox x:Name="cb_Anadir_telefonos" Grid.Column="2" Grid.Row="2" Height="NaN" VerticalContentAlignment="Center" SelectedIndex="0"/>
+                                <Button x:Name="bt_Anadir_añadirCorreo" Grid.Column="3" Content="" Grid.Row="1" Height="NaN" Width="NaN" Click="bt_Anadir_añadirCorreo_Click">
+                                    <Button.BorderBrush>
+                                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                                    </Button.BorderBrush>
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="/Iconos/añadir.png" Stretch="Uniform"/>
+                                    </Button.Background>
+                                </Button>
+                                <Button x:Name="bt_Anadir_añadirTelefono" Grid.Column="3" Content="" Grid.Row="2" Height="NaN" Width="NaN" Click="bt_Anadir_añadirTelefono_Click">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="/Iconos/añadir.png" Stretch="Uniform"/>
+                                    </Button.Background>
+                                    <Button.BorderBrush>
+                                        <ImageBrush/>
+                                    </Button.BorderBrush>
+                                </Button>
+                                <Button x:Name="bt_Anadir_eliminarCorreo" Grid.Column="4" Content="" Grid.Row="1" Height="NaN" Width="NaN" Margin="0,0,55,0" Click="bt_Anadir_eliminarCorreo_Click">
+                                    <Button.BorderBrush>
+                                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                                    </Button.BorderBrush>
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="/Iconos/eliminar.png" Stretch="Uniform"/>
+                                    </Button.Background>
+                                </Button>
+                                <Button x:Name="bt_Anadir_eliminartlf" Grid.Column="4" Content="" Grid.Row="2" Height="NaN" Width="NaN" Margin="0,0,55,0" Click="bt_Anadir_eliminartlf_Click">
+                                    <Button.BorderBrush>
+                                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                                    </Button.BorderBrush>
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="/Iconos/eliminar.png" Stretch="Uniform"/>
+                                    </Button.Background>
+                                </Button>
+                            </Grid>
+                        </GroupBox>
+                        <Label x:Name="lbl_TituloAnadirUsuario" Content="Rellena los datos del Usuario" HorizontalAlignment="Center" VerticalAlignment="Top" Width="688" FontSize="20" HorizontalContentAlignment="Center"/>
+                        <Button x:Name="btn_cancelarNuevoUsuario" Content="" HorizontalAlignment="Left" Margin="0,0,0,318" Click="btn_cancelarNuevoUsuario_Click" Width="62">
+                            <Button.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0"/>
+                            </Button.Foreground>
+                            <Button.BorderBrush>
+                                <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                            </Button.BorderBrush>
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Iconos/close.png" Stretch="Uniform"/>
+                            </Button.Background>
+                        </Button>
+                        <Button x:Name="btn_siguiente" Margin="585,311,31,11" Click="btn_siguiente_Click">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Iconos/flecha derecha.png" Stretch="Uniform"/>
+                            </Button.Background>
+                        </Button>
+                        <Label x:Name="lbl_NU_ErrorDatos_Nombre" Content="Introduce el nombre" HorizontalAlignment="Left" Margin="371,75,0,0" VerticalAlignment="Top" Foreground="#FFFB1F00" FontSize="14" Visibility="Hidden"/>
+                        <Label x:Name="lbl_NU_ErrorDatos_Apellidos" Content="Introduce los apellidos" HorizontalAlignment="Left" Margin="371,104,0,0" VerticalAlignment="Top" Foreground="#FFFB1F00" FontSize="14" Visibility="Hidden"/>
+                        <Label x:Name="lbl_NU_ErrorDatos_Edad" Content="Introduce la edad" HorizontalAlignment="Left" Margin="371,133,0,0" VerticalAlignment="Top" Foreground="#FFFB1F00" FontSize="14" Visibility="Hidden"/>
+                    </Grid>
+                </Border>
+                <Border x:Name="border_anadirExcursionista_2" BorderBrush="Black" BorderThickness="1" Grid.Row="1" Margin="44,18,43,10" Grid.RowSpan="3" Visibility="Hidden">
+                    <Grid>
+                        <Rectangle Stroke="Black" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Fill="White"/>
+                        <Label x:Name="lbl_TituloAnadirUsuario1" Content="Seleccione las rutas del Usuario" HorizontalAlignment="Center" VerticalAlignment="Top" Width="688" FontSize="20" HorizontalContentAlignment="Center"/>
+                        <Button x:Name="btn_cancelarNuevoUsuario1" Content="" HorizontalAlignment="Left" Margin="0,0,0,318" Click="btn_cancelarNuevoUsuario_Click" Width="62">
+                            <Button.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0"/>
+                            </Button.Foreground>
+                            <Button.BorderBrush>
+                                <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                            </Button.BorderBrush>
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Iconos/close.png" Stretch="Uniform"/>
+                            </Button.Background>
+                        </Button>
+                        <Button x:Name="btn_guardarNuevoUsuario" Content="Añadir" HorizontalAlignment="Left" Margin="553,292,0,0" VerticalAlignment="Top" Height="51" Width="106" FontSize="20" Click="btn_guardarNuevoUsuario_Click"/>
+                        <Button x:Name="btn_anterior" Content="" HorizontalAlignment="Left" Margin="31,292,0,0" VerticalAlignment="Top" Height="51" Width="77" Click="btn_anterior_Click">
+                            <Button.Background>
+                                <ImageBrush ImageSource="/Iconos/flecha izquierda.png" Stretch="Uniform"/>
+                            </Button.Background>
+                        </Button>
+                        <DataGrid x:Name="dg_anadirruta_NuevoUsuario" Margin="156,83,21,103" AutoGenerateColumns="False" MinRowHeight="25" CanUserAddRows="False" RowHeight="25" CanUserDeleteRows="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Ruta" Binding="{Binding Nombre}" IsReadOnly="True" />
+                                <DataGridTemplateColumn Header="Fecha">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <DatePicker x:Name="MyDatePicker" SelectedDate="{Binding fecha}" BorderBrush="Transparent" Focusable="False" >
+                                                <DatePicker.Resources>
+                                                    <Style TargetType="{x:Type DatePickerTextBox}">
+                                                        <Setter Property="IsReadOnly" Value="True"/>
+                                                    </Style>
+                                                </DatePicker.Resources>
+                                            </DatePicker>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Header="Hora" Binding="{Binding hora}" IsReadOnly="True"/>
+                                <DataGridTextColumn Header="Guia" Binding="{Binding Guia}" IsReadOnly="True"/>
+                                <DataGridCheckBoxColumn Header="Realizada" Binding="{Binding Realizada}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <GridSplitter HorizontalAlignment="Left" Height="182" Margin="147,83,0,0" VerticalAlignment="Top" Width="9"/>
+                        <DataGrid x:Name="dg_NU_seleccionar"  Margin="25,83,541,103" AutoGenerateColumns="False" CanUserAddRows="False" CanUserResizeColumns="False" MinRowHeight="25" CanUserResizeRows="False" HorizontalScrollBarVisibility="Disabled" RowHeight="25" CanUserDeleteRows="False" >
+                            <DataGrid.Columns>
+                                <DataGridCheckBoxColumn x:Name="col_NU_seleccionar" Header="Seleccionar" Binding="{Binding Seleccionada}" CanUserResize="False" Width="10" MinWidth="120" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Border>
+                <Border x:Name="border_NuevoUsuario_AñadirCorreo" BorderBrush="Black" BorderThickness="1" Grid.Row="2" Margin="196,69,195,30" Visibility="Hidden">
+                    <Grid>
+                        <Rectangle Stroke="Black" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Fill="White"/>
+                        <Label x:Name="lbl_NU_anadircorreo" Content="Correo:" Margin="27,55,287,102" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="30"/>
+                        <TextBox x:Name="txt_NU_anadircorreo" HorizontalAlignment="Left" Margin="97,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="30" VerticalContentAlignment="Center"/>
+                        <Button x:Name="btn_NU_cancelarcorreo" Content="Cancelar" Margin="78,121,236,24" Click="btn_NU_cancelarcorreo_Click"/>
+                        <Button x:Name="btn_NU_anadircorreo" Content="Añadir" Margin="252,121,62,24" Click="btn_NU_anadircorreo_Click" />
+                    </Grid>
+                </Border>
+                <Border x:Name="border_NuevoUsuario_AñadirTlf" BorderBrush="Black" BorderThickness="1" Grid.Row="2" Margin="196,69,195,30" Visibility="Hidden">
+                    <Grid>
+                        <Rectangle Stroke="Black" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Fill="White"/>
+                        <Label x:Name="lbl_NU_anadirtlf" Content="Telefono:" Margin="27,55,287,102" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="30"/>
+                        <TextBox x:Name="txt_NU_anadirtlf" HorizontalAlignment="Left" Margin="97,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="30" VerticalContentAlignment="Center"/>
+                        <Button x:Name="btn_NU_cancelartlf" Content="Cancelar" Margin="78,121,236,24" Click="btn_NU_cancelartlf_Click"  />
+                        <Button x:Name="btn_NU_anadirtlf" Content="Añadir" Margin="252,121,62,24" Click="btn_NU_anadirtlf_Click" />
+                    </Grid>
+                </Border>
+                <Border x:Name="border_eliminarExcursioonista" BorderBrush="Black" BorderThickness="1" Grid.Row="2" Margin="196,69,108,30" Background="White" Visibility="Hidden">
+                    <Grid>
+                        <Rectangle Stroke="Black"/>
+                        <Image Margin="25,30,328,72" RenderTransformOrigin="0.449,0.39" Source="/Imagenes/alerta.png"/>
+                        <Label Name="lbl_aviso" Content="¿Quieres eliminar este excursionista? &#x0a; Esta acción no se puede deshacer" Margin="143,42,38,84" FontSize="16"/>
+                        <Button Name="btn_eliminarDefinitivo"  Content="Eliminar" Margin="346,137,54,10" Click="btn_eliminarDefinitivo_Click"/>
+                        <Button Name="btn_cancelarDefinitivo" Content="Cancelar" HorizontalAlignment="Left" Margin="56,137,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.782,-0.094" Height="40" Width="70" Click="btn_cancelarDefinitivo_Click"/>
+                    </Grid>
+                </Border>
+                <Border x:Name="border_NU_Cancelar" BorderBrush="Black" BorderThickness="1" Grid.Row="2" Margin="196,69,108,30" Background="White" Visibility="Hidden">
+                    <Grid>
+                        <Rectangle Stroke="Black"/>
+                        <Image Margin="25,30,328,72" RenderTransformOrigin="0.449,0.39" Source="/Imagenes/alerta.png"/>
+                        <Label x:Name="lbl_NU_aviso" Content="¿Quieres salir del proceso? &#xA;" Margin="159,54,100,72" FontSize="16"/>
+                        <Button x:Name="btn_NU_Salir"  Content="Salir" Margin="325,137,54,10" FontSize="14" Click="btn_NU_Salir_Click" />
+                        <Button x:Name="btn_NU_Permanecer" Content="Permanecer" HorizontalAlignment="Left" Margin="55,137,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.782,-0.094" Height="40" Width="92" FontSize="14" Click="btn_NU_Permanecer_Click"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

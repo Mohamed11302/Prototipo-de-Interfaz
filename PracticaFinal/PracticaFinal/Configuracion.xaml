@@ -1,0 +1,290 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PracticaFinal"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="PracticaFinal.Configuracion"
+        mc:Ignorable="d"
+        Title="Configuracion" 
+        Height="650" Width="950" 
+        WindowStartupLocation="CenterScreen"
+        MinHeight="650" MinWidth="950">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="MaxLength" Value="30"></Setter>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="MaxLength" Value="30"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="pnlPrincipal" Width="800" Margin="50,0,50,9" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="250*" />
+            <RowDefinition Height="54*"/>
+        </Grid.RowDefinitions>
+        <GroupBox x:Name="GBPrincipal" BorderBrush="Black"
+                  Background="AliceBlue" Margin="0,0,0,106" Grid.RowSpan="2" Grid.Row="1" >
+
+            <GroupBox.Header >
+                <Border  TextBlock.FontSize="22" Background="Blue" >
+                    <TextBlock Text="Configuración" Foreground ="White"/>
+                </Border>
+            </GroupBox.Header>
+
+            <Grid x:Name="pnlUsuario" Margin="6,0,5,0" Height="460">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="63"/>
+                    <RowDefinition Height="4"/>
+                    <RowDefinition Height="368"/>
+                    <RowDefinition Height="12.875"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="lbl_Pestana" Content="Perfil" Margin="111,10,417,10" FontSize="22" VerticalContentAlignment="Center"/>
+                <Button Name="CerrarConfiguracion"  Margin="708,10,6,10" Click="CerrarConfiguracion_Click" ToolTip="Salir de la pantalla de configuración">
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Iconos/close.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <TabControl x:Name="tabConfiguracion" HorizontalContentAlignment="Center" TabStripPlacement="Left" SelectedIndex="0" Grid.Row="2" SelectionChanged="Tabconfiguracion_SelectionChanged">
+                    <TabItem x:Name="Perfil" Header="Perfil" BorderBrush="Black" Background="AliceBlue" Height="40">
+                        <Grid Background="AliceBlue">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="182"/>
+                                <RowDefinition Height="191"/>
+                            </Grid.RowDefinitions>
+                            <GroupBox x:Name="GBInformaciónPersonal" BorderBrush="Blue" Margin="0,5,378,4">
+
+                                <GroupBox.Header>
+                                    <Border Background="Blue" >
+                                        <TextBlock x:Name="TB_InformaciónPersonal" Text="Información personal" Foreground="White"/>
+                                    </Border>
+                                </GroupBox.Header>
+
+                                <Grid x:Name="pnlInformaciónPersonal">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20" />
+                                        <ColumnDefinition Width="121" />
+                                        <ColumnDefinition Width="120" />
+                                        <ColumnDefinition Width="20" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Label x:Name="lbl_nombreusuario" Content="Nombre usuario: *" Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Right" />
+                                    <TextBox x:Name="txt_nombreusuario" Grid.Row="0" Grid.Column="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+                                    <Label x:Name="lbl_nombre" Content="Nombre: *" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Right" />
+                                    <TextBox x:Name="txt_nombre" Grid.Column="2" Margin="0,0,0,26" Grid.RowSpan="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Grid.Row="1" />
+                                    <Label x:Name="lbl_apellidos" Content="Apellidos: *" Grid.Row="2" Grid.Column="1" HorizontalContentAlignment="Right"/>
+                                    <TextBox x:Name="txt_apellidos" Grid.Row="2" Grid.Column="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" />
+                                    <Label x:Name="lbl_nacimiento" Content="Fecha de nacimiento: *" Grid.Row="3" Grid.Column="1" HorizontalContentAlignment="Right"/>
+                                    <TextBox x:Name="txt_nacimiento" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" />
+                                    <Label x:Name="lbl_edad" Grid.Column="1" Content="Edad: *" Grid.Row="4" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                                    <TextBox x:Name="txt_edad" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+                                </Grid>
+                            </GroupBox>
+
+                            <GroupBox x:Name="GBInformaciónContacto" BorderBrush="Gray" Margin="0,6,165,54" Grid.Row="1">
+                                <GroupBox.Header>
+                                    <Border Background="Blue" >
+                                        <TextBlock x:Name="TB_InformaciónContacto" Text="Información de contacto" Foreground="White"/>
+                                    </Border>
+                                </GroupBox.Header>
+
+                                <Grid x:Name="Grid_InformaciónContacto">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="78"/>
+                                        <ColumnDefinition Width="125"/>
+                                        <ColumnDefinition Width="182"/>
+                                        <ColumnDefinition Width="113"/>
+                                        <ColumnDefinition Width="47"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="10"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="100"/>
+                                    </Grid.RowDefinitions>
+                                    <Label x:Name="lbl_Correos" Grid.Column="1" Content="Correo/s Electronicos:" Height="NaN" Width="NaN" HorizontalContentAlignment="Right" Grid.Row="1"/>
+                                    <Label x:Name="lbl_Telefonos" Grid.Column="1" Content="Teléfono/s:" Grid.Row="2" Height="NaN" Width="NaN" HorizontalContentAlignment="Right"/>
+                                    <ComboBox x:Name="cb_correos" Grid.Column="2" Height="NaN" Grid.Row="1" VerticalContentAlignment="Center" SelectedIndex="0"/>
+                                    <ComboBox x:Name="cb_telefonos" Grid.Column="2" Grid.Row="2" Height="NaN" VerticalContentAlignment="Center" SelectedIndex="0" />
+                                    <Button x:Name="bt_añadirCorreo" Grid.Column="3" Content="" Grid.Row="1" Width="NaN" Click="bt_añadirCorreo_Click" Margin="0,0,76,0" ToolTip="Añadir un correo">
+                                        <Button.BorderBrush>
+                                            <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                                        </Button.BorderBrush>
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="/Iconos/añadir.png" Stretch="Uniform"/>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button x:Name="bt_eliminarCorreo" Grid.Column="3" Content="" Width="NaN" Margin="37,0,47,0" Grid.Row="1" Click="bt_eliminarCorreo_Click" ToolTip="Eliminar el correo seleccionado">
+                                        <Button.BorderBrush>
+                                            <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                                        </Button.BorderBrush>
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="/Iconos/eliminar.png" Stretch="Uniform"/>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button x:Name="bt_añadirtlf" Grid.Column="3" Content="" Grid.Row="2" Width="NaN" Margin="0,0,76,0" Click="bt_añadirtlf_Click" ToolTip="Añadir un telefono">
+                                        <Button.BorderBrush>
+                                            <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                                        </Button.BorderBrush>
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="/Iconos/añadir.png" Stretch="Uniform"/>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button x:Name="bt_eliminartlf" Grid.Column="3" Content="" Width="NaN" Margin="37,0,47,0" Grid.Row="2" Click="bt_eliminartlf_Click" ToolTip="Eliminar el telefono seleccionado">
+                                        <Button.BorderBrush>
+                                            <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                                        </Button.BorderBrush>
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="/Iconos/eliminar.png" Stretch="Uniform"/>
+                                        </Button.Background>
+                                    </Button>
+                                </Grid>
+
+                            </GroupBox>
+                            <Border BorderBrush="Black" BorderThickness="1" Margin="535,25,23,35">
+                                <Grid>
+                                    <Image x:Name="ImgUsuario" Margin="0,0,0,-1"/>
+                                    <Button x:Name="btnCargarImagen"
+                                            Content="+" ToolTip="Cambiar imagen" FontSize="30" FontWeight ="Bold"
+                                            Background="Transparent" BorderBrush="Transparent"
+                                            Foreground="Blue" Click="btnCargarImagen_Click" Margin="91,76,0,0"/>
+                                </Grid>
+                            </Border>
+                            <Label Name="lbl_Error_nombreusuario" Content="Introduce el nombre de usuario" HorizontalAlignment="Left" Margin="303,22,0,0" VerticalAlignment="Top" Foreground="#FFF90000" Visibility="Hidden"/>
+                            <Label x:Name="lbl_Error_nombre" Content="Introduce el nombre" HorizontalAlignment="Left" Margin="303,48,0,0" VerticalAlignment="Top" Foreground="#FFF90000" Visibility="Hidden"/>
+                            <Label x:Name="lbl_Error_apellidos" Content="Introduce los apellidos" HorizontalAlignment="Left" Margin="308,73,0,0" VerticalAlignment="Top" Foreground="#FFF90000" Visibility="Hidden"/>
+                            <Label x:Name="lbl_Error_fechanacimiento" Content="Introduce la fecha de nacimiento" HorizontalAlignment="Left" Margin="308,99,0,0" VerticalAlignment="Top" Foreground="#FFF90000" Visibility="Hidden"/>
+                            <Label x:Name="lbl_Error_edad" Content="Introduce la edad" HorizontalAlignment="Left" Margin="308,125,0,0" VerticalAlignment="Top" Foreground="#FFF90000" Visibility="Hidden"/>
+                        </Grid>
+                    </TabItem>
+                    <TabItem x:Name="Personalizacion" Header="Personalizacion" BorderBrush="Black" Background="AliceBlue" Height="36">
+                        <Grid Background="AliceBlue">
+                            <Label x:Name="lbl_textomuestra" Content="Texto de Muestra" Margin="440,127,0,199" FontSize="12" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                            <Slider x:Name="Slider_tamaño"  Margin="223,139,333,205" Minimum="12" Maximum="20" ValueChanged="Slider_ValueChanged" SmallChange="0.2" Value="12"/>
+                            <Border x:Name="border_switch" BorderThickness="1" Margin="201,36,417,286">
+                                <Border.BorderBrush>
+                                    <SolidColorBrush Color="Black" Opacity="0"/>
+                                </Border.BorderBrush>
+                                <Grid>
+                                    <Image x:Name="Img_switchoff" HorizontalAlignment="Stretch" Height="NaN" VerticalAlignment="Stretch" Width="NaN" Source="/Iconos/switch off.png"/>
+                                    <Image x:Name="Img_switchon" Height="NaN" Width="NaN" Source="/Iconos/switch on.png" Visibility="Hidden"/>
+                                    <Button x:Name="Boton_switch" RenderTransformOrigin="0.092,1.009" Height="NaN" Click="Boton_switch_Click">
+                                        <Button.BorderBrush>
+                                            <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                                        </Button.BorderBrush>
+                                        <Button.Background>
+                                            <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                                        </Button.Background>
+                                    </Button>
+                                </Grid>
+                            </Border>
+                            <Label x:Name="lbl_Tema_Switch" Content="Claro" Margin="264,40,338,286" FontSize="16" VerticalContentAlignment="Center"/>
+                            <Label Content="A" Margin="194,135,464,201" RenderTransformOrigin="0.017,0.275"/>
+                            <Label Content="A" Margin="348,130,305,195" RenderTransformOrigin="0.017,0.275" FontSize="20"/>
+                            <Label x:Name="lbl_Tema_Copy" Content="Tamaño Letra:" Margin="52,125,508,201" FontSize="16" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                            <Label x:Name="lbl_tema" Content="Tema:" Margin="57,36,508,290" FontSize="16" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                            <Label x:Name="lbl_Tema_Copy1" Content="Idioma:" Margin="52,204,508,122" FontSize="16" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+                            <ComboBox x:Name="cb_idioma" HorizontalAlignment="Left" Margin="218,209,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="1" Height="27">
+                                <ComboBoxItem x:Name="Castellano" Content="Castellano"/>
+                                <ComboBoxItem x:Name="Inglés" Content="Inglés"/>
+                            </ComboBox>
+                        </Grid>
+                    </TabItem>
+                    <TabItem x:Name="Notificaciones" Header="Notificaciones" BorderBrush="Black" Background="AliceBlue" Height="40">
+                        <Grid Background="AliceBlue">
+                            <CheckBox x:Name="Notificaciones1" Content="Obtener notificaciones" Margin="56,23,400,0" VerticalAlignment="Top" FontSize="20" VerticalContentAlignment="Center" Checked="Notificaciones1_Checked" Unchecked="Notificaciones1_Checked"/>
+                            <CheckBox x:Name="Notificaciones2" Content="Mostrar notificaciones en la pantalla de bloqueo" Margin="80,64,234,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center"/>
+                            <CheckBox x:Name="Notificaciones3" Content="Permitir que las notificaciones reproduzcan sonidos" Margin="80,89,206,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center"/>
+                            <Label Content="Tipos de notificaciones" Margin="56,0,409,171" VerticalAlignment="Bottom" FontSize="20"/>
+                            <CheckBox x:Name="Notificaciones4" Content="Nuevas rutas" Margin="80,196,234,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center"/>
+                            <CheckBox x:Name="Notificaciones5" Content="Nuevos excursionistas" Margin="80,221,206,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center"/>
+                            <CheckBox x:Name="Notificaciones6" Content="Nuevos usuarios" Margin="80,246,234,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center"/>
+                            <CheckBox x:Name="Notificaciones7" Content="Comienzo de rua" Margin="80,271,206,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center"/>
+                        </Grid>
+                    </TabItem>
+                    <TabItem x:Name="Seguridad" Header="Seguridad" BorderBrush="Black" Background="AliceBlue" Height="40">
+                        <Grid Background="AliceBlue">
+                            <Label x:Name="lbl_TituloCorreoRecuperacion" Content="Correo de Recuperación" Margin="32,10,368,310" FontSize="20" FontWeight="Bold"/>
+                            <Label Content="Correo de recuperación:" Margin="80,66,426,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14"/>
+                            <TextBox Name="txt_correoRecuperacion" Margin="250,66,127,266" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+                            <Label x:Name="lbl_TituloCambiarContraseña" Content="Cambiar contraseña" Margin="27,119,373,201" FontSize="20" FontWeight="Bold"/>
+                            <Label Content="Antigua contraseña:" Margin="80,0,426,0" VerticalAlignment="Center" Height="30" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14"/>
+                            <Label Content="Nueva contraseña:" Margin="80,219,426,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14"/>
+                            <Label Content="Confirmar contraseña:" Margin="80,271,426,0" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="14"/>
+                            <Label Name="lbl_ErrorAntiguaContraseña" Content="Contraseña incorrecta" Margin="461,170,81,0" VerticalAlignment="Top" Foreground="Red" Visibility="Hidden"/>
+                            <Label x:Name="lbl_ErrorConfirmarContraseña" Content="Las contraseñas no son iguales" Margin="461,275,38,0" VerticalAlignment="Top" Foreground="Red" Visibility="Hidden"/>
+                            <PasswordBox Name="passAntiguaContraseña"  HorizontalAlignment="Left" Margin="250,168,0,0" VerticalAlignment="Top" Width="206" Height="30" PasswordChar="*" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+                            <PasswordBox x:Name="passNuevaContraseña" Margin="250,219,220,113" PasswordChar="*" PasswordChanged="passContraseña_Change" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+                            <PasswordBox x:Name="passConfirmarContraseña" HorizontalAlignment="Left" Margin="250,273,0,0" VerticalAlignment="Top" Width="206" Height="30" PasswordChar="*" PasswordChanged="passConfirmarContraseña_Changed" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+                            <CheckBox Name="cb_1minuscula" Content="1 minúscula" HorizontalAlignment="Left" Margin="494,225,0,0" VerticalAlignment="Top" Foreground="#FFD60F0F" Visibility="Hidden"/>
+                            <Label Name="lbl_condiciones" Content="La nueva contraseña debe tener: " Margin="461,201,30,0" VerticalAlignment="Top" Visibility="Hidden"/>
+                            <CheckBox x:Name="cb_1mayuscula" Content="1 minúscula" HorizontalAlignment="Left" Margin="494,245,0,0" VerticalAlignment="Top" Foreground="#FFD60F0F" Visibility="Hidden"/>
+                            <Label x:Name="lbl_ErrorNuevaContraseña" Content="Introduzca la nueva contraseña" Margin="461,221,30,0" VerticalAlignment="Top" Foreground="Red" Visibility="Hidden"/>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+                <Border x:Name="bd_opcionesdatos" BorderBrush="Black" BorderThickness="1" Margin="96,325,0,0" Background="White" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Grid.Row="2">
+                    <Border.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Border.RenderTransform>
+                    <Grid x:Name="Grid_OpcionesDatos">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="330"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="bt_guardar" Content="Guardar" Height="NaN" Width="NaN" Background="White" Grid.Column="2" Click="bt_guardar_Click" ToolTip="Guardar cambios"/>
+                        <Button x:Name="bt_cancelar" Grid.Column="1" Content="Cancelar" Height="NaN" Width="NaN" Background="White" Click="bt_cancelar_Click" ToolTip="Cancelar cambios"/>
+                        <Button x:Name="bt_eliminar" Content="Eliminar" Height="NaN" Width="NaN" Background="White" Click="bt_eliminar_Click" ToolTip="Eliminar este usuario"/>
+                    </Grid>
+                </Border>
+                <Border x:Name="border_AñadirCorreo" BorderBrush="Black" BorderThickness="1" Grid.Row="2" Margin="196,89,195,90" Visibility="Hidden">
+                    <Grid>
+                        <Rectangle Stroke="Black" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Fill="White"/>
+                        <Label x:Name="lbl_anadircorreo" Content="Correo:" Margin="27,55,287,102" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="30"/>
+                        <TextBox x:Name="txt_anadircorreo" HorizontalAlignment="Left" Margin="97,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="30" VerticalContentAlignment="Center"/>
+                        <Button x:Name="btn_cancelarcorreo" Content="Cancelar" Margin="78,121,236,24" Click="btn_cancelarcorreo_Click"/>
+                        <Button x:Name="btn_anadircorreo" Content="Añadir" Margin="252,121,62,24" Click="btn_anadircorreo_Click"/>
+                    </Grid>
+                </Border>
+                <Border x:Name="border_AñadirTlf" BorderBrush="Black" BorderThickness="1" Grid.Row="2" Margin="196,89,195,90" Visibility="Hidden">
+                    <Grid>
+                        <Rectangle Stroke="Black" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Fill="White"/>
+                        <Label x:Name="lbl_anadirtlf" Content="Telefono:" Margin="27,55,287,102" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="30"/>
+                        <TextBox x:Name="txt_anadirtlf" HorizontalAlignment="Left" Margin="97,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="30" VerticalContentAlignment="Center"/>
+                        <Button x:Name="btn_cancelartlf" Content="Cancelar" Margin="78,121,236,24" Click="btn_cancelartlf_Click" />
+                        <Button x:Name="btn_anadirtlf" Content="Añadir" Margin="252,121,62,24" Click="btn_anadirtlf_Click" />
+                    </Grid>
+                </Border>
+                <Border x:Name="border_eliminarUsuario" BorderBrush="Black" BorderThickness="1" Grid.Row="2" Margin="173,89,131,90" Background="White" Visibility="Hidden">
+                    <Grid>
+                        <Rectangle Stroke="Black"/>
+                        <Image Margin="25,30,328,72" RenderTransformOrigin="0.449,0.39" Source="/Imagenes/alerta.png"/>
+                        <Label x:Name="lbl_aviso" Content="¿Quieres eliminar este usuario? &#xA; Esta acción no se puede deshacer" Margin="143,42,38,84" FontSize="16"/>
+                        <Button x:Name="btn_eliminarDefinitivo"  Content="Eliminar" Margin="346,137,54,10" Click="btn_eliminarDefinitivo_Click"/>
+                        <Button x:Name="btn_cancelarDefinitivo" Content="Cancelar" HorizontalAlignment="Left" Margin="56,137,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.782,-0.094" Height="40" Width="70" Click="btn_cancelarDefinitivo_Click"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

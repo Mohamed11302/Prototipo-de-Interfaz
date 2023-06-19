@@ -1,0 +1,34 @@
+﻿<PuntosInteres>
+	<PuntoInteres id="0">
+		<Nombre>Río Algodor</Nombre>
+		<Descripcion>Afluente del Tajo, aunque la mayoría del año por este río no discurre el agua, en los meses de primavera rebosa de vida podiendo ver fauna acuática como truchas y cangrejos americanos.</Descripcion>
+		<Tipologia>Río</Tipologia>
+		<Imagenes>Imagenes/Algodor1.jpg,Imagenes/Algodor2.jpg</Imagenes>
+		<Ruta>0</Ruta>
+	</PuntoInteres>
+	
+	<PuntoInteres id="1">
+		<Nombre>Río San Marcos</Nombre>
+		<Descripcion>Afluente del Guadalquivir, ubicado en un bonito valle rodeado de enebros, coscojas y madroños que lo hacen un bonito punto para sacarse fotografías.</Descripcion>
+		<Tipologia>Río</Tipologia>
+		<Imagenes>Imagenes/SanMarcos1.jpg,Imagenes/SanMarcos2.jpg,Imagenes/SanMarcos3.jpg</Imagenes>
+		<Ruta>1</Ruta>
+	</PuntoInteres>
+	
+	<PuntoInteres id="2">
+		<Nombre>Vértice Geodésico</Nombre>
+		<Descripcion>Este vertice indica una posición geográfica exacta conformando una red de triangulación con otros vértices geodésicos.</Descripcion>
+		<Tipologia>Vértice Geodésico</Tipologia>
+		<Imagenes>Imagenes/VertigeGeodesico1.jpg,Imagenes/VertigeGeodesico2.jpg</Imagenes>
+		<Ruta>0</Ruta>
+	</PuntoInteres>
+	
+	<PuntoInteres id="3">
+		<Nombre>Mirador del Cojo</Nombre>
+		<Descripcion>Bonito mirador desde donde se puede ver gran parte de sierra que conforma los Montes de Toledo, abunda fauna como el ciervo, el jabalí o el conejo.</Descripcion>
+		<Tipologia>Mirador</Tipologia>
+		<Imagenes>Imagenes/MiradorCojo1.jpg</Imagenes>
+		<Ruta>1</Ruta>
+	</PuntoInteres>
+	
+</PuntosInteres>

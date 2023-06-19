@@ -1,0 +1,30 @@
+﻿<Rutas>
+	<Ruta id="0">
+		<Nombre>Revientagemelos</Nombre>
+		<Origen>Los Villares</Origen>
+		<Destino>Llanos del Petróleo</Destino>
+		<Distancia>4310</Distancia>
+		<Altitud>750</Altitud>
+		<Guia>0</Guia>
+		<maxParticipantes>20</maxParticipantes>
+		<fecha>01/02/2022</fecha>
+		<hora>9:15</hora>
+		<duracion>225</duracion>
+		<foto>Rutas1.jpeg</foto>
+		<dificultad>Medio</dificultad>
+	</Ruta>
+	<Ruta id="1">
+		<Nombre>Ruta del Cares</Nombre>
+		<Origen>Caín</Origen>
+		<Destino>Poncebos</Destino>
+		<Distancia>11000</Distancia>
+		<Altitud>750</Altitud>
+		<Guia>1</Guia>
+		<maxParticipantes>25</maxParticipantes>
+		<fecha>15/05/2023</fecha>
+		<hora>10:30</hora>
+		<duracion>240</duracion>
+		<foto>Rutas2.jpeg</foto>
+		<dificultad>Dificil</dificultad>
+	</Ruta>
+</Rutas>

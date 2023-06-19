@@ -1,0 +1,22 @@
+﻿<Excursionistas>
+	<Excursionista id="0">
+		<Nombre>Manuel</Nombre>
+		<Apellido>Lozano</Apellido>
+		<Edad>20</Edad>
+		<Telefono>647262626</Telefono>
+		<Correo>Manuel.Lozano@alu.uclm.es,manuu.lz@gmail.com</Correo>
+		<Caratula>Imagenes/avatar1.png</Caratula>
+		<ruta1>0,1</ruta1>
+		<ruta2>false, true</ruta2>
+	</Excursionista>
+	<Excursionista id="1">
+		<Nombre>David</Nombre>
+		<Apellido>Gomez</Apellido>
+		<Edad>25</Edad>
+		<Telefono>612312626,628967547</Telefono>
+		<Correo>David.Gomez@alu.uclm.es</Correo>
+		<Caratula>Imagenes/avatar2.png</Caratula>
+		<ruta1>1</ruta1>
+		<ruta2>true</ruta2>
+	</Excursionista>
+</Excursionistas>

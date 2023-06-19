@@ -1,0 +1,39 @@
+﻿<Guias>
+	<Guia id="0">
+		<Nombre>Manuel</Nombre>
+		<Apellido>Gonzalez</Apellido>
+		<Edad>28</Edad>
+		<Telefono>648112268</Telefono>
+		<Correo>ruben@guiasrurales.com</Correo>
+		<Idiomas>Castellano,Inglés</Idiomas>
+		<Caratula>Imagenes/guia-rural.jpg</Caratula>
+		<Rutas1>0</Rutas1>
+		<Rutas2>True</Rutas2>
+		<Lunes>Mantenimiento, ,Ruta Revientagemelos,Comida, , , </Lunes>
+		<Martes>Mantenimiento, ,Ruta Revientagemelos,Comida, , , </Martes>
+		<Miercoles> , ,Ruta Carranque, ,Comida, ,Mantenimiento</Miercoles>
+		<Jueves> , , , , , , </Jueves>
+		<Viernes> , , , , , , </Viernes>
+		<Sabado> , , , , , , </Sabado>
+		<Domingo> , , , , , , </Domingo>
+	</Guia>
+
+	<Guia id="1">
+		<Nombre>Abelina</Nombre>
+		<Apellido>López</Apellido>
+		<Edad>24</Edad>
+		<Telefono>623118263</Telefono>
+		<Correo>abelina@guiasrurales.com</Correo>
+		<Idiomas>Castellano,Inglés,Francés</Idiomas>
+		<Caratula>Imagenes/abelina.jpeg</Caratula>
+		<Rutas1>0,1</Rutas1>
+		<Rutas2>True,False</Rutas2>
+		<Lunes>Mantenimiento, ,Ruta Revientagemelos,Comida, , , </Lunes>
+		<Martes>Mantenimiento, ,Ruta Revientagemelos,Comida, , , </Martes>
+		<Miercoles> , , , ,Comida, ,Mantenimiento</Miercoles>
+		<Jueves> , , ,Ruta Jaén, , , </Jueves>
+		<Viernes> , , , , , , </Viernes>
+		<Sabado> , , , , , , </Sabado>
+		<Domingo> , ,Comida, , , ,Cena</Domingo>
+	</Guia>
+</Guias>

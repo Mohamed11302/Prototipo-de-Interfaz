@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{82DED180-5F88-44C7-A045-30F0D84E68F1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PracticaFinal</RootNamespace>
+    <AssemblyName>PracticaFinal</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Ayuda.xaml.cs">
+      <DependentUpon>Ayuda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion.xaml.cs">
+      <DependentUpon>Configuracion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\ConfiguracionUsuario.cs" />
+    <Compile Include="Datos\Excursionista.cs" />
+    <Compile Include="Datos\Guia.cs" />
+    <Compile Include="Datos\PuntoInteres.cs" />
+    <Compile Include="Datos\Ruta.cs" />
+    <Compile Include="Datos\Usuario.cs" />
+    <Compile Include="Ventana_Excursionistas.xaml.cs">
+      <DependentUpon>Ventana_Excursionistas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.xaml.cs">
+      <DependentUpon>Inicio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventana_Guias.xaml.cs">
+      <DependentUpon>Ventana_Guias.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventana_Rutas.xaml.cs">
+      <DependentUpon>Ventana_Rutas.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Ayuda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Configuracion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventana_Excursionistas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Inicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Ventana_Guias.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventana_Rutas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\bicicleta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\avatar1.png" />
+    <Resource Include="Imagenes\avatar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Iconos\CerrarSesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Iconos\Ajustes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Iconos\bicicleta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\cycle-race.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Datos\Excursionistas.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Iconos\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Iconos\añadir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Datos\Rutas.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Rutas1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Rutas2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Iconos\ojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Datos\Usuarios.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Iconos\flecha derecha.png" />
+    <Resource Include="Iconos\flecha izquierda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Iconos\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Datos\Guias.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\alerta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Iconos\eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Datos\ConfiguracionUsuario.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Iconos\switch off.png" />
+    <Resource Include="Iconos\switch on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Iconos\ayuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\guia-rural.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\abelina.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Datos\PuntoInteres.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Algodor2.jpg" />
+    <Resource Include="Imagenes\VertigeGeodesico1.jpg" />
+    <Resource Include="Imagenes\VertigeGeodesico2.jpg" />
+    <Resource Include="Imagenes\SanMarcos1.jpg" />
+    <Resource Include="Imagenes\SanMarcos2.jpg" />
+    <Resource Include="Imagenes\SanMarcos3.jpg" />
+    <Resource Include="Imagenes\Algodor1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\MiradorCojo1.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,9 @@
+﻿<Configuraciones>
+	<Configuracion id="0">
+		<correoRecuperacion>manuel.garcia@gmail.com</correoRecuperacion>
+		<notificaciones>false,false,true,true,true,true,false</notificaciones>
+		<tema>1</tema>
+		<tamañoletra>12</tamañoletra>
+		<idioma>Castellano</idioma>
+	</Configuracion>
+</Configuraciones>
